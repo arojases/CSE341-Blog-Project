@@ -1,0 +1,12 @@
+// LOCALHOST 
+
+### GET all  
+
+
+### GET  by id 
+
+### Create new blog 
+
+### PUT  
+
+### DELETE  

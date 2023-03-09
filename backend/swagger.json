@@ -1,0 +1,31 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "The api server",
+    "version": "1.0.0",
+    "title": "Week Seven assignment",
+    "contact": {
+      "email": "ogu21002@byui.edu"
+    },
+    "license": {
+      "name": "Apache 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    }
+  },
+  "host": "byui-cse-341-devblog.onrender.com",
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "faculty",
+      "description": "Operations about DevBlog"
+    },
+    {
+      "name": "user",
+      "description": "Operations about user"
+    },
+    {
+      "name": "OAuth - Credentials",
+      "description": "These API endpoints are designed and will be created in the near future"
+    }
+  ]
+}
