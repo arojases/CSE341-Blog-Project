@@ -1,0 +1,70 @@
+//////////////////////////////LOCALHOST USER////////////////////////////////
+
+GET http://localhost:8080/users HTTP/1.1
+
+###Post
+POST http://localhost:8080/users HTTP/1.1
+Content-Type: application/json
+
+{
+    "firstName": "Juan", 
+    "lastName": "Perez", 
+    "email": "test@test.com", 
+    "birthday": "10/20/1990",
+    "password": "admin",
+    "phone": "351876",
+    "address": "205 N 500 W"
+}
+
+###
+GET http://localhost:8080/post HTTP/1.1
+
+###Post
+POST http://localhost:8080/post HTTP/1.1
+Content-Type: application/json
+
+{
+    "title": "My title here", 
+    "brief": "My brief here", 
+    "content": "My content here", 
+    "status": "Active"
+}
+
+###
+GET http://localhost:8080/comments HTTP/1.1
+
+###Post
+POST http://localhost:8080/comments HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "My name here", 
+    "comment": "My comment here", 
+    "email": "test@test.com", 
+    "status": "Active"
+}
+
+###
+GET http://localhost:8080/categories HTTP/1.1
+
+###Post
+POST http://localhost:8080/categories HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "My name here", 
+    "comment": "My comment here", 
+    "email": "test@test.com", 
+    "status": "Active"
+}
+
+###
+GET http://localhost:8080/categories HTTP/1.1
+
+###Post
+POST http://localhost:8080/categories HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "My name here"
+}

@@ -1,10 +1,10 @@
-const { postmodel } = require("../models")
+const { categorymodel } = require("../models")
 
 
 //Get list
 const getItem = async (req, res) => {
 
-   const data = await postmodel.find({})
+   const data = await categorymodel.find({})
    res.send(data);
 
 };
@@ -15,7 +15,7 @@ const createItem = async (req, res) => {
 
    const { body } = req
 
-   const data = await postmodel.create(body)
+   const data = await categorymodel.create(body)
    //console.log(data);
    res.send(data);
 
