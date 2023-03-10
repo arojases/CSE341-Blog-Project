@@ -1,10 +1,10 @@
 const express = require("express");
 const router = express.Router();
-const { getItem, createItem } = require("../controllers/post"); 
+const { getAllPost, createPost } = require("../controllers/post"); 
 
 //TODO https://localhost/post CRUD
 
-router.get("/", getItem);
-router.post("/", createItem)
+router.get("/", getAllPost);
+router.post("/", createPost)
 
 module.exports = router;

@@ -1,189 +1,152 @@
-###create new category
-POST https://byui-cse-341-groupjasnah.onrender.com/categories HTTP/1.1
-Content-Type: application/json
+////////////////////////////// RENDER.COM ////////////////////////////////
 
-{
-    "name": "Html"
-   
-}
+### GET all Users
 
-###GET all category
-GET https://byui-cse-341-groupjasnah.onrender.com/categories HTTP/1.1
-
-
-###user1
-POST https://byui-cse-341-groupjasnah.onrender.com/user HTTP/1.1
-Content-Type: application/json
-
-{
-    "username": "elizabethtellez",
-    "password": "Tellez@12345"
-}
-
-###user1 update
-PUT https://byui-cse-341-groupjasnah.onrender.com/user/elizabethtellez HTTP/1.1
-content-type: application/json
-
-{
-    "username": "elizabethtellez",
-    "password": "Tellez!12345",
-    "info":{
-        "firstName": "Elizabeth", 
-        "lastName": "Tellez",
-        "email": "elizabeth@test.com", 
-        "birthday": "10/20/1990",
-        "phone": "351876",
-        "address": "205 N 500 W"
-    }
-}
-
-###user2
-POST https://byui-cse-341-groupjasnah.onrender.com/user HTTP/1.1
-Content-Type: application/json
-
-{
-    "firstName": "Owas", 
-    "lastName": "Ogunniyi", 
-    "email": "owas@test.com", 
-    "birthday": "10/20/1990",
-    "password": "Owas!12345",
-    "phone": "351876",
-    "address": "205 N 500 W"
-}
-
-###user3
-POST https://byui-cse-341-groupjasnah.onrender.com/user HTTP/1.1
-Content-Type: application/json
-
-{
-    "firstName": "Ariel", 
-    "lastName": "Perez", 
-    "email": "test3@test.com", 
-    "birthday": "10/20/1990",
-    "password": "Perez!12345",
-    "phone": "351876",
-    "address": "205 N 500 W"
-}
-
-###user4
-POST https://byui-cse-341-groupjasnah.onrender.com/user HTTP/1.1
-Content-Type: application/json
-
-{
-    "firstName": "Alexis", 
-    "lastName": "Ortiz", 
-    "email": "alexis@test.com", 
-    "birthday": "10/20/1990",
-    "password": "Ortiz!12345",
-    "phone": "351876",
-    "address": "205 N 500 W"
-}
-
-###GET all Users
-GET https://byui-cse-341-groupjasnah.onrender.com/user HTTP/1.1
-
-###GET all Users
-GET https://byui-cse-341-groupjasnah.onrender.com/user/elizabethtellez HTTP/1.1
+GET https://byui-cse-341-groupjasnah.onrender.comuser HTTP/1.1
 
 ### DELETE user
-DELETE https://byui-cse-341-groupjasnah.onrender.com/user/elizabethtellez HTTP/1.1
 
+DELETE https://byui-cse-341-groupjasnah.onrender.com/user/Elizabeth HTTP/1.1
 
-
-
-
-
-//////////////////////////////LOCALHOST USER////////////////////////////////
-
-
-###create new category
-POST http://localhost:8080/categories HTTP/1.1
+### user1
+POST https://byui-cse-341-groupjasnah.onrender.com/user HTTP/1.1
 Content-Type: application/json
 
 {
-    "name": "Html"
-   
+  "username": "Elizabeth",
+  "password": "elizabethtellez@12345",
+   "firstName": "Elizabeth",
+   "lastName": "Tellez",
+   "email": "elizabeth@cse341.com"
 }
 
-###GET all category
-GET http://localhost:8080/categories HTTP/1.1
-
-
-###user1
-POST http://localhost:8080/user HTTP/1.1
-Content-Type: application/json
-
-{
-    "username": "elizabethtellez",
-    "password": "Tellez@12345"
-}
-
-###user1 update
-PUT http://localhost:8080/user/elizabethtellez HTTP/1.1
+### user1 update### PUT user 
+PUT https://byui-cse-341-groupjasnah.onrender.com/user/Elizabeth HTTP/1.1
 content-type: application/json
 
 {
-    "username": "elizabethtellez",
-    "password": "Tellez!12345",
-    "info":{
-        "firstName": "Elizabeth", 
-        "lastName": "Tellez",
-        "email": "elizabeth@test.com", 
-        "birthday": "10/20/1990",
-        "phone": "351876",
-        "address": "205 N 500 W"
-    }
+  "username": "Elizabeth",
+  "password": "elizabethtellez@12345",
+   "firstName": "Elizabeth",
+   "lastName": "Tellez",
+   "email": "elizabeth@hotmail.com",
+   "phoneNumber": "63453958",
+   "country": "Mexico",
+   "city": "Iztapalapa",
+   "birthday": "09/11/1985",
+   "address": "7095 Woodbine Ave, Iztapalapa"
 }
 
-###user2
-POST http://localhost:8080/user HTTP/1.1
-Content-Type: application/json
 
-{
-    "firstName": "Owas", 
-    "lastName": "Ogunniyi", 
-    "email": "owas@test.com", 
-    "birthday": "10/20/1990",
-    "password": "Owas!12345",
-    "phone": "351876",
-    "address": "205 N 500 W"
-}
-
-###user3
-POST http://localhost:8080/user HTTP/1.1
-Content-Type: application/json
-
-{
-    "firstName": "Ariel", 
-    "lastName": "Perez", 
-    "email": "test3@test.com", 
-    "birthday": "10/20/1990",
-    "password": "Perez!12345",
-    "phone": "351876",
-    "address": "205 N 500 W"
-}
-
-###user4
-POST http://localhost:8080/user HTTP/1.1
-Content-Type: application/json
-
-{
-    "firstName": "Alexis", 
-    "lastName": "Ortiz", 
-    "email": "alexis@test.com", 
-    "birthday": "10/20/1990",
-    "password": "Ortiz!12345",
-    "phone": "351876",
-    "address": "205 N 500 W"
-}
+////////////////////////////// LOCALHOST USER ////////////////////////////////
 
 ###GET all Users
+
 GET http://localhost:8080/user HTTP/1.1
 
-###GET all Users
-GET http://localhost:8080/user/elizabethtellez HTTP/1.1
+### DELETE user
+
+DELETE http://localhost:8080/user/Owas HTTP/1.1
+
+
+### user2
+
+POST http://localhost:8080/user HTTP/1.1
+Content-Type: application/json
+
+{
+  "username": "Owas",
+  "password": "Owas@12345",
+   "firstName": "Owamamwen",
+   "lastName": "Ogunniyi",
+   "email": "owas@cse341.com"
+}
+
+### user2 update### PUT user 
+
+PUT http://localhost:8080/user/Owas HTTP/1.1
+content-type: application/json
+
+{
+  "username": "Owas",
+  "password": "Owas@12345",
+   "firstName": "Owamamwen",
+   "lastName": "Ogunniyi",
+   "email": "owas@yahoo.com",
+   "phoneNumber": "453563635",
+   "country": "France",
+   "city": "Paris",
+   "birthday": "12/11/1991",
+   "address": "Delta, 48 Boulevard Jourdan, 75014 Paris"
+}
+
+
+### user3
+
+POST http://localhost:8080/user HTTP/1.1
+Content-Type: application/json
+
+{
+  "username": "Ariel",
+  "password": "Ariel@12345",
+   "firstName": "Ariel",
+   "lastName": "Perez",
+   "email": "ariel@cse341.com"
+}
+
+### user3 update### PUT user 
+
+PUT http://localhost:8080/user/Owas HTTP/1.1
+content-type: application/json
+
+{
+  "username": "Ariel",
+  "password": "Ariel@12345",
+   "firstName": "Ariel",
+   "lastName": "Perez",
+   "email": "ariel@cse341.com",
+   "phoneNumber": "135363635",
+   "country": "USA",
+   "city": "Idaho",
+   "birthday": "08/09/1989",
+   "address": "205 N 500 W"
+}
+
+
+### user4
+
+POST http://localhost:8080/user HTTP/1.1
+Content-Type: application/json
+
+{
+  "username": "Alexis",
+  "password": "alexis@12345",
+   "firstName": "Alexis",
+   "lastName": "Ortiz",
+   "email": "alexis@cse341.com"
+}
+
+### PUT user4 updated 
+
+PUT http://localhost:8080/user/Owas HTTP/1.1
+content-type: application/json
+
+{
+  "username": "Alexis",
+  "password": "alexis@12345",
+   "firstName": "Alexis",
+   "lastName": "Ortiz",
+   "email": "alexis@cse341.com",
+   "phoneNumber": "453563635",
+   "country": "USA",
+   "city": "Idaho",
+   "birthday": "08/10/1988",
+   "address": "205 N 500 W"
+}
+
 
 ###User1 make a post
+
 POST http://localhost:8080/post HTTP/1.1
 Content-Type: application/json
 
@@ -201,9 +164,11 @@ Content-Type: application/json
 }
 
 ###GET all Posts
+
 GET http://localhost:8080/post HTTP/1.1
 
 ###User2 make a comment
+
 POST http://localhost:8080/comments HTTP/1.1
 Content-Type: application/json
 
@@ -219,6 +184,7 @@ Content-Type: application/json
 }
 
 ###User3 make a comment to the user1 post
+
 POST http://localhost:8080/comments HTTP/1.1
 Content-Type: application/json
 
@@ -234,6 +200,7 @@ Content-Type: application/json
 }
 
 ###User4 make a correction on the comment from user3
+
 PUT http://localhost:8080/comments HTTP/1.1
 Content-Type: application/json
 
@@ -249,10 +216,9 @@ Content-Type: application/json
 }
 
 ###GET all Comments
+
 GET http://localhost:8080/comments HTTP/1.1
 
-### DELETE user
-DELETE http://localhost:8080/user/elizabethtellez HTTP/1.1
 
 
 

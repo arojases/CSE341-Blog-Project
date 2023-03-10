@@ -2,7 +2,7 @@ const { commentmodel } = require("../models")
 
 
 //Get list
-const getItem = async (req, res) => {
+const getAllComment = async (req, res) => {
 
    const data = await commentmodel.find({})
    res.send(data);
@@ -10,7 +10,7 @@ const getItem = async (req, res) => {
 };
 
 //Insert 
-const createItem = async (req, res) => {
+const createComment = async (req, res) => {
 
 
    const { body } = req
@@ -21,4 +21,4 @@ const createItem = async (req, res) => {
 
 };
 
-module.exports = { getItem, createItem };
+module.exports = { getAllComment, createComment };

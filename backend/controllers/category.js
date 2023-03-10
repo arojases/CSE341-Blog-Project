@@ -2,7 +2,7 @@ const { categorymodel } = require("../models")
 
 
 //Get list
-const getItem = async (req, res) => {
+const getAllCategory = async (req, res) => {
 
    const data = await categorymodel.find({})
    res.send(data);
@@ -10,7 +10,7 @@ const getItem = async (req, res) => {
 };
 
 //Insert 
-const createItem = async (req, res) => {
+const createCategory = async (req, res) => {
 
 
    const { body } = req
@@ -21,4 +21,4 @@ const createItem = async (req, res) => {
 
 };
 
-module.exports = { getItem, createItem };
+module.exports = { getAllCategory, createCategory };

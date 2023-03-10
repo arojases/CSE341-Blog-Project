@@ -1,9 +1,9 @@
 {
     "swagger": "2.0",
     "info": {
-      "description": "The api service for DevBlog",
+      "description": "The api service for DevBlog \n \n ******Members ******\n Elizabeth \n Ariel \n Alexis \n Owamamwen",
       "version": "1.0.0",
-      "title": "Jasnah Team Work",
+      "title": "Jasnah TeamWork",
       "contact": {
         "email": "studentteamwork@byui.edu"
       },
@@ -82,6 +82,27 @@
               "name": "password",
               "in": "query",
               "description": "The password for login in clear text",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "name": "firstName",
+              "in": "query",
+              "description": "The firstName for login in clear text",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "name": "lastName",
+              "in": "query",
+              "description": "The lastName for login in clear text",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "name": "email",
+              "in": "query",
+              "description": "The email for login in clear text",
               "required": true,
               "type": "string"
             }
@@ -280,7 +301,7 @@
     "definitions": {
       "User": {
         "type": "object",
-        "required": ["password", "username"],
+        "required": ["password", "username", "firstName", "lastName", "email"],
         "properties": {
           "_id": {
             "type": "integer",
@@ -291,17 +312,32 @@
           },
           "password": {
             "type": "string"
+          },
+          "firstName": {
+            "type": "string"
+          },
+          "lastName": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
           }
         }
       },
       "Credentials": {
         "type": "object",
-        "required": ["password", "username"],
+        "required": ["password", "username", "firstName", "lastName", "email"],
         "properties": {
           "username": {
             "type": "string"
           },
-          "password": {
+          "firstName": {
+            "type": "string"
+          },
+          "lastName": {
+            "type": "string"
+          },
+          "email": {
             "type": "string"
           }
         }

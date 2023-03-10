@@ -1,37 +1,49 @@
 module.exports = (mongoose) => {
-    const userSchema = new mongoose.Schema({
-        username: {
-            type: String
-        },
-        password: {
-            type: String
-        },
-        
-        info: {
-        firstName: {
-            type: String
-        },
-        lastName: {
-            type: String
-        },
-        email: {
-            type: String
-        },
-        birthday: {
-            type: String
-        },
-        phone: {
-            type: Number
-        },
-        address: {
-            type: String
-        }
+    const userSchema = mongoose.Schema({
+      username: {
+        type: String
+      },
+      password: {
+        type: String
+      },
+      firstName: {
+        type: String
+      },
+      lastName: {
+        type: String
+      },
+      email: {
+        type: String
+      },
+      phoneNumber: {
+        type: String
+      },
+      country: {
+        type: String
+      },
+      city: {
+        type: String
+      },
+      birthday: {
+        type: String
+      },
+      address: {
+        type: String
+      },
+      isActive: {
+        type: Boolean,
+        default: true
+      },
+      created_at: {
+        type: Date,
+        default: Date.now()
     },
-        created_at: {
-            type: Date,
-            default: Date.now(),
-        },
-});  
-
-return mongoose.model("users", userSchema)
-};  
+    updated_at: {
+        type: Date
+    },
+      
+    });
+  
+    return mongoose.model('users', userSchema);
+  };
+  

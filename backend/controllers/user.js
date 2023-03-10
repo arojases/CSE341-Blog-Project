@@ -38,7 +38,6 @@ module.exports.getAll = (req, res, next) => {
       .then((data) => {
         if (data[0] == null) res.status(404).send({ message: 'Not found or Empty.'});
         else res.status(200).send(data);
-        // res.status(200).send(data);
       })
       .catch((err) => {
         res.status(500).send({
@@ -70,7 +69,7 @@ module.exports.getUser = (req, res, next) => {
   }
 };
 
-module.exports.updateUser = (req, res, next) => {
+module.exports.updateUser = async (req, res, next) => {
   try {
     const username = req.params.username;
     if (!username) {
@@ -83,15 +82,19 @@ module.exports.updateUser = (req, res, next) => {
       res.status(400).send({ message: passwordCheck.error });
       return;
     }
-    User.findOne({ username: username }).then(function (err, user) {
+    User.findOne({ username: username }, function (err, user) {
       user.username = req.params.username;
-      user.password = req.params.password;
+      user.password = req.body.password;
       user.firstName = req.body.firstName;
       user.lastName = req.body.lastName;
       user.email = req.body.email;
+      user.phoneNumber = req.body.phoneNumber;
+      user.country = req.body.country;
+      user.city = req.body.city;
       user.birthday = req.body.birthday;
-      user.phone = req.body.phone;
       user.address = req.body.address;
+      user.isActive = req.body=`${true}`;
+      user.updated_at = req.body=`${Date.now()}`;
       user.save(function (err) {
         if (err) {
           res.status(500).json(err || 'Error occurred while updating.');
@@ -106,7 +109,8 @@ module.exports.updateUser = (req, res, next) => {
   }
 };
 
-module.exports.deleteUser = (req, res, next) => {
+
+module.exports.deleteUser = async (req, res, next) => {
   try {
     const username = req.params.username;
     if (!username) {
@@ -115,9 +119,9 @@ module.exports.deleteUser = (req, res, next) => {
     }
     User.deleteOne({ username: username }).then(function (err, result) {
       if (err) {
-        res.status(500).json(err || 'Error occurred while deleting.');
+        res.status(204).json(' Successfully deleted user.');
       } else {
-        res.status(204).send(result);
+        res.status(404).json(err || 'Error occurred while deleting.');
       }
     });
   } catch (err) {
