@@ -15,21 +15,31 @@ GET http://localhost:8080/categories HTTP/1.1
 
 
 ###user1
-POST http://localhost:8080/users HTTP/1.1
+POST http://localhost:8080/user HTTP/1.1
 Content-Type: application/json
 
 {
+    "username": "elizabethtellez",
+    "password": "Tellez@12345"
+}
+
+###user1 update
+PUT http://localhost:8080/user/elizabethtellez HTTP/1.1
+content-type: application/json
+
+{
+    "username": "elizabethtellez",
+    "password": "Tellez!12345",
     "firstName": "Elizabeth", 
-    "lastName": "Tellez", 
-    "email": "eli@test.com", 
+    "lastName": "Tellez",
+    "email": "elizabeth@test.com", 
     "birthday": "10/20/1990",
-    "password": "admin",
     "phone": "351876",
     "address": "205 N 500 W"
 }
 
 ###user2
-POST http://localhost:8080/users HTTP/1.1
+POST http://localhost:8080/user HTTP/1.1
 Content-Type: application/json
 
 {
@@ -37,13 +47,13 @@ Content-Type: application/json
     "lastName": "Ogunniyi", 
     "email": "owas@test.com", 
     "birthday": "10/20/1990",
-    "password": "admin",
+    "password": "Owas!12345",
     "phone": "351876",
     "address": "205 N 500 W"
 }
 
 ###user3
-POST http://localhost:8080/users HTTP/1.1
+POST http://localhost:8080/user HTTP/1.1
 Content-Type: application/json
 
 {
@@ -51,13 +61,13 @@ Content-Type: application/json
     "lastName": "Perez", 
     "email": "test3@test.com", 
     "birthday": "10/20/1990",
-    "password": "admin",
+    "password": "Perez!12345",
     "phone": "351876",
     "address": "205 N 500 W"
 }
 
 ###user4
-POST http://localhost:8080/users HTTP/1.1
+POST http://localhost:8080/user HTTP/1.1
 Content-Type: application/json
 
 {
@@ -65,14 +75,16 @@ Content-Type: application/json
     "lastName": "Ortiz", 
     "email": "alexis@test.com", 
     "birthday": "10/20/1990",
-    "password": "admin",
+    "password": "Ortiz!12345",
     "phone": "351876",
     "address": "205 N 500 W"
 }
 
 ###GET all Users
-GET http://localhost:8080/users HTTP/1.1
+GET http://localhost:8080/user HTTP/1.1
 
+###GET all Users
+GET http://localhost:8080/user/elizabethtellez HTTP/1.1
 
 ###User1 make a post
 POST http://localhost:8080/post HTTP/1.1
@@ -83,10 +95,10 @@ Content-Type: application/json
     "content": "I want to style html elements in CSS using class, not id. and I need to assign 2 classes to 1 element. I want one mother class e.g.'animal' and smaller classes e.g. 'mammal' & 'reptile'. I could just style every element in the smaller classes individually with id's but I'm working on a big project and that would take forever. is there a way to assign two classes to 1 element?", 
     "status": "Active",
     "categories": {
-        "_id": "640a98999d611836b18002ff"
+        "_id": "640aa7200a55706f4a3b0d87"
     },
     "users": {
-        "_id": "640a998f9d611836b1800301",
+        "_id": "640aa7360a55706f4a3b0d8a",
         "firstName": "Elizabeth"
     }
 }
@@ -101,10 +113,10 @@ Content-Type: application/json
 {
     "comment": "Yes, you can easily give multiple classes to a single element, just separate them by a space. For example: <div class=animal mammal reptile>...</div> Now the above div has 3 classes, animal, mammal and reptile. And now you can target each just like you'd target a single class. ",    
     "posts": {
-        "_id": "640a9c9f9d611836b180030f"
+        "_id": "640aa7fe0a55706f4a3b0d95"
     },
     "users": {
-        "_id": "640a99919d611836b1800303",
+        "_id": "640aa73c0a55706f4a3b0d8c",
         "firstName": "Owas"
     }
 }
@@ -116,30 +128,34 @@ Content-Type: application/json
 {
     "comment": "Yes, just simply add a space after the first class and add another.",    
     "posts": {
-        "_id": "640a9c9f9d611836b180030f"
+        "_id": "640aa7fe0a55706f4a3b0d95"
     },
     "users": {
-        "_id": "640a99939d611836b1800305",
+        "_id": "640aa7440a55706f4a3b0d8e",
         "firstName": "Ariel"
     }
 }
 
 ###User4 make a correction on the comment from user3
-POST http://localhost:8080/comments HTTP/1.1
+PUT http://localhost:8080/comments HTTP/1.1
 Content-Type: application/json
 
 {
     "comment": "Yes, just simply add a space after the first class and add another.",    
     "posts": {
-        "_id": "640a9c9f9d611836b180030f"
+        "_id": "640aa7fe0a55706f4a3b0d95"
     },
     "users": {
-        "_id": "640a9df89d611836b1800316",
+        "_id": "640aa7460a55706f4a3b0d90",
         "firstName": "Alexis"
     }
 }
 
 ###GET all Comments
 GET http://localhost:8080/comments HTTP/1.1
+
+### DELETE user
+DELETE http://localhost:8080/user/elizabethtellez HTTP/1.1
+
 
 

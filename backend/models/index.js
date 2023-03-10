@@ -1,8 +1,12 @@
-const models = {
-    userModel: require("./users"),
-    commentmodel: require("./comments"),
-    postmodel: require("./posts"),
-    categorymodel: require("./categories")
-}
+const dbConfig = require('../config/dbconfig.js');
 
-module.exports = models
+const mongoose = require('mongoose');
+mongoose.Promise = global.Promise;
+
+const db = {};
+db.mongoose = mongoose;
+db.mongoose.set('strictQuery', true);
+db.url = dbConfig.url;
+db.user = require('./user.js')(mongoose);
+
+module.exports = db;
