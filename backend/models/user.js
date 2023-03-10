@@ -6,6 +6,8 @@ module.exports = (mongoose) => {
         password: {
             type: String
         },
+        
+        info: {
         firstName: {
             type: String
         },
@@ -23,7 +25,8 @@ module.exports = (mongoose) => {
         },
         address: {
             type: String
-        },
+        }
+    },
         created_at: {
             type: Date,
             default: Date.now(),

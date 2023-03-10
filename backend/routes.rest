@@ -30,12 +30,14 @@ content-type: application/json
 {
     "username": "elizabethtellez",
     "password": "Tellez!12345",
-    "firstName": "Elizabeth", 
-    "lastName": "Tellez",
-    "email": "elizabeth@test.com", 
-    "birthday": "10/20/1990",
-    "phone": "351876",
-    "address": "205 N 500 W"
+    "info":{
+        "firstName": "Elizabeth", 
+        "lastName": "Tellez",
+        "email": "elizabeth@test.com", 
+        "birthday": "10/20/1990",
+        "phone": "351876",
+        "address": "205 N 500 W"
+    }
 }
 
 ###user2
