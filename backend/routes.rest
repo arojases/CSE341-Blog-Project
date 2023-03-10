@@ -1,3 +1,98 @@
+###create new category
+POST https://byui-cse-341-groupjasnah.onrender.com/categories HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Html"
+   
+}
+
+###GET all category
+GET https://byui-cse-341-groupjasnah.onrender.com/categories HTTP/1.1
+
+
+###user1
+POST https://byui-cse-341-groupjasnah.onrender.com/user HTTP/1.1
+Content-Type: application/json
+
+{
+    "username": "elizabethtellez",
+    "password": "Tellez@12345"
+}
+
+###user1 update
+PUT https://byui-cse-341-groupjasnah.onrender.com/user/elizabethtellez HTTP/1.1
+content-type: application/json
+
+{
+    "username": "elizabethtellez",
+    "password": "Tellez!12345",
+    "info":{
+        "firstName": "Elizabeth", 
+        "lastName": "Tellez",
+        "email": "elizabeth@test.com", 
+        "birthday": "10/20/1990",
+        "phone": "351876",
+        "address": "205 N 500 W"
+    }
+}
+
+###user2
+POST https://byui-cse-341-groupjasnah.onrender.com/user HTTP/1.1
+Content-Type: application/json
+
+{
+    "firstName": "Owas", 
+    "lastName": "Ogunniyi", 
+    "email": "owas@test.com", 
+    "birthday": "10/20/1990",
+    "password": "Owas!12345",
+    "phone": "351876",
+    "address": "205 N 500 W"
+}
+
+###user3
+POST https://byui-cse-341-groupjasnah.onrender.com/user HTTP/1.1
+Content-Type: application/json
+
+{
+    "firstName": "Ariel", 
+    "lastName": "Perez", 
+    "email": "test3@test.com", 
+    "birthday": "10/20/1990",
+    "password": "Perez!12345",
+    "phone": "351876",
+    "address": "205 N 500 W"
+}
+
+###user4
+POST https://byui-cse-341-groupjasnah.onrender.com/user HTTP/1.1
+Content-Type: application/json
+
+{
+    "firstName": "Alexis", 
+    "lastName": "Ortiz", 
+    "email": "alexis@test.com", 
+    "birthday": "10/20/1990",
+    "password": "Ortiz!12345",
+    "phone": "351876",
+    "address": "205 N 500 W"
+}
+
+###GET all Users
+GET https://byui-cse-341-groupjasnah.onrender.com/user HTTP/1.1
+
+###GET all Users
+GET https://byui-cse-341-groupjasnah.onrender.com/user/elizabethtellez HTTP/1.1
+
+### DELETE user
+DELETE https://byui-cse-341-groupjasnah.onrender.com/user/elizabethtellez HTTP/1.1
+
+
+
+
+
+
 //////////////////////////////LOCALHOST USER////////////////////////////////
 
 
