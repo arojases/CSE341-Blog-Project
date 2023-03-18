@@ -1,224 +1,149 @@
+
 ////////////////////////////// RENDER.COM ////////////////////////////////
 
-### GET all Users
 
-GET https://byui-cse-341-groupjasnah.onrender.comuser HTTP/1.1
+////////////////////////////// Category ////////////////////////////////
 
-### DELETE user
+### PUT New Category
 
-DELETE https://byui-cse-341-groupjasnah.onrender.com/user/Elizabeth HTTP/1.1
+GET https://byui-cse-341-groupjasnah.onrender.com/categories HTTP/1.1
 
-### user1
-POST https://byui-cse-341-groupjasnah.onrender.com/user HTTP/1.1
 Content-Type: application/json
 
 {
-  "username": "Elizabeth",
-  "password": "elizabethtellez@12345",
-   "firstName": "Elizabeth",
-   "lastName": "Tellez",
-   "email": "elizabeth@cse341.com"
+
+    "name":"Html"
+
 }
 
-### user1 update### PUT user 
-PUT https://byui-cse-341-groupjasnah.onrender.com/user/Elizabeth HTTP/1.1
-content-type: application/json
+### GET All Categories
 
-{
-  "username": "Elizabeth",
-  "password": "elizabethtellez@12345",
-   "firstName": "Elizabeth",
-   "lastName": "Tellez",
-   "email": "elizabeth@hotmail.com",
-   "phoneNumber": "63453958",
-   "country": "Mexico",
-   "city": "Iztapalapa",
-   "birthday": "09/11/1985",
-   "address": "7095 Woodbine Ave, Iztapalapa"
-}
+GET https://byui-cse-341-groupjasnah.onrender.com/categories HTTP/1.1
 
 
-////////////////////////////// LOCALHOST USER ////////////////////////////////
-
-###GET all Users
-
-GET http://localhost:8080/user HTTP/1.1
-
-### DELETE user
-
-DELETE http://localhost:8080/user/Owas HTTP/1.1
+////////////////////////////// User ////////////////////////////////
 
 
-### user2
+### PUT Login User
 
-POST http://localhost:8080/user HTTP/1.1
+GET https://byui-cse-341-groupjasnah.onrender.com/auth/login HTTP/1.1
+
 Content-Type: application/json
 
 {
-  "username": "Owas",
-  "password": "Owas@12345",
-   "firstName": "Owamamwen",
-   "lastName": "Ogunniyi",
-   "email": "owas@cse341.com"
-}
 
-### user2 update### PUT user 
+  "username": "Eliza",
 
-PUT http://localhost:8080/user/Owas HTTP/1.1
-content-type: application/json
+  "password": "12345"
 
-{
-  "username": "Owas",
-  "password": "Owas@12345",
-   "firstName": "Owamamwen",
-   "lastName": "Ogunniyi",
-   "email": "owas@yahoo.com",
-   "phoneNumber": "453563635",
-   "country": "France",
-   "city": "Paris",
-   "birthday": "12/11/1991",
-   "address": "Delta, 48 Boulevard Jourdan, 75014 Paris"
 }
 
 
-### user3
+### GET Single User
 
-POST http://localhost:8080/user HTTP/1.1
+GET https://byui-cse-341-groupjasnah.onrender.com/users/641605d88f4fd40ca9302c35 HTTP/1.1
+
+
+### DELETE User
+
+DELETE https://byui-cse-341-groupjasnah.onrender.com/users/641604b97619830c56ddaae6 HTTP/1.1
+
 Content-Type: application/json
 
 {
-  "username": "Ariel",
-  "password": "Ariel@12345",
-   "firstName": "Ariel",
-   "lastName": "Perez",
-   "email": "ariel@cse341.com"
-}
 
-### user3 update### PUT user 
+  "userId": "641604b97619830c56ddaae6",
 
-PUT http://localhost:8080/user/Owas HTTP/1.1
-content-type: application/json
+  "username": "Eliza"
 
-{
-  "username": "Ariel",
-  "password": "Ariel@12345",
-   "firstName": "Ariel",
-   "lastName": "Perez",
-   "email": "ariel@cse341.com",
-   "phoneNumber": "135363635",
-   "country": "USA",
-   "city": "Idaho",
-   "birthday": "08/09/1989",
-   "address": "205 N 500 W"
 }
 
 
-### user4
+### POST User
+POST https://byui-cse-341-groupjasnah.onrender.com/auth/register HTTP/1.1
 
-POST http://localhost:8080/user HTTP/1.1
 Content-Type: application/json
 
 {
-  "username": "Alexis",
-  "password": "alexis@12345",
-   "firstName": "Alexis",
-   "lastName": "Ortiz",
-   "email": "alexis@cse341.com"
+
+  "username": "Owamamwen",
+
+  "email": "owas@gmail.com",
+
+
+  "password": "12345"
 }
 
-### PUT user4 updated 
+### PUT User
+PUT  https://byui-cse-341-groupjasnah.onrender.com/users/64160ceed5e70b0e43ea30d6 HTTP/1.1
 
-PUT http://localhost:8080/user/Owas HTTP/1.1
-content-type: application/json
-
-{
-  "username": "Alexis",
-  "password": "alexis@12345",
-   "firstName": "Alexis",
-   "lastName": "Ortiz",
-   "email": "alexis@cse341.com",
-   "phoneNumber": "453563635",
-   "country": "USA",
-   "city": "Idaho",
-   "birthday": "08/10/1988",
-   "address": "205 N 500 W"
-}
-
-
-###User1 make a post
-
-POST http://localhost:8080/post HTTP/1.1
 Content-Type: application/json
 
 {
-    "title": "can you assign 2 classes to a single html element",
-    "content": "I want to style html elements in CSS using class, not id. and I need to assign 2 classes to 1 element. I want one mother class e.g.'animal' and smaller classes e.g. 'mammal' & 'reptile'. I could just style every element in the smaller classes individually with id's but I'm working on a big project and that would take forever. is there a way to assign two classes to 1 element?", 
-    "status": "Active",
-    "categories": {
-        "_id": "640aa7200a55706f4a3b0d87"
-    },
-    "users": {
-        "_id": "640aa7360a55706f4a3b0d8a",
-        "firstName": "Elizabeth"
-    }
+
+  "userId": "64160ceed5e70b0e43ea30d6",
+
+  "username": "Eliza",
+
+  "password": "12345",
+
+  "firstName": "Elizabeth",
+
+  "lastName": "Tellez",
+
+  "email": "owas@cse341.com"
+
 }
 
-###GET all Posts
 
-GET http://localhost:8080/post HTTP/1.1
+////////////////////////////// POST NEW Content ////////////////////////////////
 
-###User2 make a comment
 
-POST http://localhost:8080/comments HTTP/1.1
+### POST User Make A New Blog Post
+POST https://byui-cse-341-groupjasnah.onrender.com/posts HTTP/1.1
+
 Content-Type: application/json
 
 {
-    "comment": "Yes, you can easily give multiple classes to a single element, just separate them by a space. For example: <div class=animal mammal reptile>...</div> Now the above div has 3 classes, animal, mammal and reptile. And now you can target each just like you'd target a single class. ",    
-    "posts": {
-        "_id": "640aa7fe0a55706f4a3b0d95"
-    },
-    "users": {
-        "_id": "640aa73c0a55706f4a3b0d8c",
-        "firstName": "Owas"
-    }
+  "username": "Eliza",
+
+  "title": "Html",
+
+  "desc": "The HyperText Markup Language or HTML is the standard markup language for documents designed to be displayed in a web browser. It is often assisted by technologies such as Cascading Style Sheets (CSS) and scripting languages such as JavaScript."
+
 }
 
-###User3 make a comment to the user1 post
+### PUT update the Blog Post
+POST https://byui-cse-341-groupjasnah.onrender.com/posts/64161092fa9f8b0eba01d82e HTTP/1.1
 
-POST http://localhost:8080/comments HTTP/1.1
 Content-Type: application/json
 
 {
-    "comment": "Yes, just simply add a space after the first class and add another.",    
-    "posts": {
-        "_id": "640aa7fe0a55706f4a3b0d95"
-    },
-    "users": {
-        "_id": "640aa7440a55706f4a3b0d8e",
-        "firstName": "Ariel"
-    }
+  "username": "Eliza",
+
+  "title": "Html",
+
+  "desc": "HTML is the standard markup language for documents designed to be displayed in a web browser."
+
 }
 
-###User4 make a correction on the comment from user3
+### GET single Blog Post
+POST https://byui-cse-341-groupjasnah.onrender.com/posts/64161092fa9f8b0eba01d82e HTTP/1.1
 
-PUT http://localhost:8080/comments HTTP/1.1
+
+### GET All Blog Post
+POST https://byui-cse-341-groupjasnah.onrender.com/posts HTTP/1.1
+
+### GET All Blog Post by username
+POST https://byui-cse-341-groupjasnah.onrender.com/posts?user=Eliza HTTP/1.1
+
+### PUT update the Blog Post
+POST https://byui-cse-341-groupjasnah.onrender.com/posts/64161092fa9f8b0eba01d82e HTTP/1.1
+
 Content-Type: application/json
 
 {
-    "comment": "Yes, just simply add a space after the first class and add another.",    
-    "posts": {
-        "_id": "640aa7fe0a55706f4a3b0d95"
-    },
-    "users": {
-        "_id": "640aa7460a55706f4a3b0d90",
-        "firstName": "Alexis"
-    }
+
+  "username": "Eliza"
+  
 }
-
-###GET all Comments
-
-GET http://localhost:8080/comments HTTP/1.1
-
-
-
-

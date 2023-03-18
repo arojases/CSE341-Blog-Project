@@ -1,49 +1,55 @@
-module.exports = (mongoose) => {
-    const userSchema = mongoose.Schema({
-      username: {
-        type: String
-      },
-      password: {
-        type: String
-      },
-      firstName: {
-        type: String
-      },
-      lastName: {
-        type: String
-      },
-      email: {
-        type: String
-      },
-      phoneNumber: {
-        type: String
-      },
-      country: {
-        type: String
-      },
-      city: {
-        type: String
-      },
-      birthday: {
-        type: String
-      },
-      address: {
-        type: String
-      },
-      isActive: {
-        type: Boolean,
-        default: true
-      },
-      created_at: {
-        type: Date,
-        default: Date.now()
+const mongoose = require("mongoose");
+
+const UserSchema = new mongoose.Schema(
+  {
+    username: {
+      type: String,
+      required: true,
+      unique: true,
     },
-    updated_at: {
-        type: Date
+    email: {
+      type: String,
+      required: true,
+      unique: true,
     },
-      
-    });
-  
-    return mongoose.model('users', userSchema);
-  };
-  
+    password: {
+      type: String,
+      required: true,
+    },
+    firstName: {
+      type: String,
+      default: "",
+    },
+    lastName: {
+      type: String,
+      default: "",
+    },
+    phoneNumber: {
+      type: String,
+      default: "",
+    },
+    country: {
+      type: String,
+      default: "",
+    },
+    city: {
+      type: String,
+      default: "",
+    },
+    birthday: {
+      type: String,
+      default: "",
+    },
+    address: {
+      type: String,
+      default: "",
+    },
+    profilePic: {
+      type: String,
+      default: "",
+    },
+  },
+  { timestamps: true }
+);
+
+module.exports = mongoose.model("User", UserSchema);

@@ -1,28 +1,32 @@
-const express = require('express');
+const express = require("express");
 const bodyParser = require('body-parser');
-
-const port = process.env.PORT || 3000;
 const app = express();
+const dotenv = require("dotenv");
+const mongoose = require("mongoose");
+const path = require("path");
+
+const port = process.env.PORT || 8080;
+
+dotenv.config();
+app.use(express.json());
+
 
 app.use(bodyParser.json())
   .use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
     next();
-  })
-  .use('/', require('./routes'));
+  }).use('/', require('./routes'));
 
-const db = require('./models');
-db.mongoose
-  .connect(db.url, {
+mongoose
+  .connect(process.env.MONGO_API_KEY, {
     useNewUrlParser: true,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify:true
   })
-  .then(() => {
-    app.listen(port, () => {
-      console.log(`DB Connected running on ${port}.`);
-    });
-  })
-  .catch((err) => {
-    console.log('Cannot connect database!', err);
-    process.exit();
-  });
+  .then(console.log("Connected to MongoDB"))
+  .catch((err) => console.log(err));
+
+app.listen(port, () => {
+  console.log("Backend is running.");
+});
