@@ -2,9 +2,10 @@ const router = require("express").Router();
 const User = require("../models/user");
 const Post = require("../models/post");
 const bcrypt = require("bcrypt");
+const validation = require('../middleware/validate.js');
 
 //UPDATE User
-router.put("/:id", async (req, res) => {
+router.put("/:id", validation.updateUser, async (req, res) => {
   if (req.body.userId === req.params.id) {
     if (req.body.password) {
       const salt = await bcrypt.genSalt(10);

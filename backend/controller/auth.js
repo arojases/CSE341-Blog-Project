@@ -1,12 +1,25 @@
 const router = require("express").Router();
 const User = require("../models/user");
 const bcrypt = require("bcrypt");
+const validation = require('../middleware/validate.js');
+const passwordUtil = require('../utils/passwordComplexityCheck');
 
 //REGISTER
-router.post("/register", async (req, res) => {
+router.post("/register", validation.registerUser, async (req, res) => {
   try {
+
+    // hashed password
     const salt = await bcrypt.genSalt(10);
     const hashedPass = await bcrypt.hash(req.body.password, salt);
+    
+    // password complexity Ccheck
+    const passwordch = req.body.password;
+    const passwordCheck = passwordUtil.passwordPass(passwordch);
+    if (passwordCheck.error) {
+      res.status(400).send({ message: passwordCheck.error });
+      return;
+    }
+
     const newUser = new User({
       username: req.body.username,
       email: req.body.email,
