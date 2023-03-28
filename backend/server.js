@@ -1,7 +1,7 @@
 const express = require("express");
 const bodyParser = require('body-parser');
-// const dotenv = require("dotenv");
-require('dotenv').config();
+const dotenv = require("dotenv");
+// require('dotenv').config();
 const mongoose = require("mongoose");
 
 const session = require("express-session");
@@ -10,6 +10,8 @@ const passport = require('passport');
 require('./auth-google/oauth.js');
 const logElement = require('./auth-google/loginElement.js')
 const isLoggedIn = require('./middleware/isLoggedIn.js')
+
+dotenv.config();
 
 const port = process.env.PORT || 8080;
 const SECT_SRECT = process.env.SECTION_SRECT
@@ -31,7 +33,6 @@ app.use(session({
 
 app.use(passport.initialize());
 app.use(passport.session());
-// dotenv.config();
 app.use(express.json());
 
 app.get('/login', (req, res) => {
