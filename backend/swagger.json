@@ -16,6 +16,10 @@
   "basePath": "/",
   "tags": [
     {
+      "name": "logout",
+      "description": "Logs out current logged"
+    },
+    {
       "name": "login-credentials",
       "description": "These API endpoints are designed for Login user account"
     },
@@ -34,6 +38,20 @@
   ],
   "schemes": ["https"],
   "paths": {
+    "/logout": {
+      "get": {
+        "tags": ["logout"],
+        "summary": "Logs out current logged in user session",
+        "operationId": "logoutUser",
+        "produces": ["application/json"],
+        "parameters": [],
+        "responses": {
+          "default": {
+            "description": "successful operation"
+          }
+        }
+      }
+    },
     "/auth/login": {
       "post": {
         "tags": ["login-credentials"],
